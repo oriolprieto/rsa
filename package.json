@@ -1,0 +1,24 @@
+{
+  "name": "rsa_module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rsa.cjs.js",
+  "browser": "rsa.esm.js",
+  "types": "./types/rsa_modules.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c && node build/build.dts.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^4.0.0",
+    "bigint-conversion": "^2.1.2",
+    "bigint-crypto-utils": "^2.5.0",
+    "rollup": "^2.1.0"
+  },
+  "dependencies": {
+    "typescript": "^3.8.3"
+  }
+}

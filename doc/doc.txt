@@ -1,0 +1,43 @@
+Transcompile code with rollup, from js to js, node and ts.
+
+Create a hash.js in the src folder like this with ES6 encoding and install dependencies:
+src/hash.js
+and put some code inside, after that, install rollup:
+npm i rollup -D
+generate rollup.config.js as sown:
+
+import typescript from '@rollup/plugin-typescript';
+
+export default{
+    input: 'src/rsa.js',
+    output: [
+        {
+            file: 'rsa.cjs.js',
+            format: 'cjs'
+        },
+        {
+            file: 'rsa.esm.js',
+            format: 'esm'
+        }
+    ],
+    //external: ['bigint-crypto-utils']
+    external: ['bigint-crypto-utils','bigint-conversion']
+};
+
+decument functions as shown:
+
+    /**
+     *
+     * @param {number} bl
+     * @returns {boolean}
+     */
+    bitLengthVerify(bl) {
+        if (bl % 8) return false;
+        else return true;
+    }
+
+modify package.json and run
+
+npm run build
+
+this run all inside build option in packaje.json
